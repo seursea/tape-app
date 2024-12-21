@@ -1,6 +1,7 @@
 import { StatusBar } from 'expo-status-bar';
 import { Text, View, TouchableOpacity } from 'react-native';
 import { useRouter } from 'expo-router'; 
+import { images } from './assets'; 
 
 export default function App() {
   const router = useRouter(); 
@@ -26,7 +27,7 @@ export default function App() {
       </Text>
 
       <Image
-        source={require('./assets/images/undraw_to-do-list_dzdz.png')}
+        source={require('.assets\images\undraw_to-do-list_dzdz.png')}
         className="w-[361.57px] h-[200px] mt-[30px]"
         resizeMode="contain"
       />
