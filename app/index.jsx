@@ -25,12 +25,6 @@ export default function App() {
         <Text style={{ fontWeight: 'bold' }}>Stay Productive</Text>
       </Text>
 
-      <Image
-        source={require('./assets/images/undraw_to-do-list_dzdz.png')} 
-        style={{ width: 200, height: 200, marginTop: 20 }} 
-      />
-
-
       <Text className="text-center text-black text-xl mt-[50px] px-10">
         Track tasks, meet goals, and simplify your life with Tape.
       </Text>
