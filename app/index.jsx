@@ -1,7 +1,7 @@
 import { StatusBar } from 'expo-status-bar';
-import { Text, View, TouchableOpacity } from 'react-native';
-import { useRouter } from 'expo-router'; 
-import { images } from './assets'; 
+import { Text, View, TouchableOpacity, Image } from 'react-native';
+import { useRouter } from 'expo-router';
+import icons from '../constants/icons.js';
 
 export default function App() {
   const router = useRouter(); 
@@ -26,11 +26,18 @@ export default function App() {
         <Text style={{ fontWeight: 'bold' }}>Stay Productive</Text>
       </Text>
 
-      <Image
-        source={require('.assets\images\undraw_to-do-list_dzdz.png')}
-        className="w-[361.57px] h-[200px] mt-[30px]"
-        resizeMode="contain"
-      />
+      <View className="flex-1 items-center justify-center px-4">
+        <Image
+          source={icons.undrawToDoList}
+          style={{ 
+            width: '100%',
+            height: 200,
+            marginTop: 30,
+            backgroundColor: 'transparent'
+          }}
+          resizeMode="contain"
+        />
+      </View>
 
       <Text className="text-center text-black text-xl mt-[50px] px-10">
         Track tasks, meet goals, and simplify your life with Tape.
@@ -41,7 +48,7 @@ export default function App() {
         className="w-[356px] h-[53px] bg-[#73dabf] border border-black justify-center items-center mt-[150px]"
       >
         <Text className="text-black text-lg font-bold">Get Started</Text>
-      </TouchableOpacity>
+      </TouchableOpacity> 
 
       <Text className="absolute top-[63px] text-black text-2xl font-bold" style={{ fontWeight: 'bold' }}>
         tape.
