@@ -21,23 +21,16 @@ export default function App() {
       </View>
 
       <Text className="text-center text-black text-3xl font-bold mt-[100px]">
-        <Text style={{ fontWeight: 'bold' }}>Stay Organized,</Text>
+        <Text style={{ fontWeight: '900' }}>Stay Organized,</Text>
         {"\n"}
-        <Text style={{ fontWeight: 'bold' }}>Stay Productive</Text>
+        <Text style={{ fontWeight: '900' }}>Stay Productive</Text>
       </Text>
 
-      <View className="flex-1 items-center justify-center px-4">
-        <Image
-          source={icons.undrawToDoList}
-          style={{ 
-            width: '100%',
-            height: 200,
-            marginTop: 30,
-            backgroundColor: 'transparent'
-          }}
-          resizeMode="contain"
-        />
-      </View>
+      <Image
+        source={icons.undrawToDoList}
+        style={{ width: 361.57, height: 200, marginTop: 30 }}
+        resizeMode="contain"
+      />
 
       <Text className="text-center text-black text-xl mt-[50px] px-10">
         Track tasks, meet goals, and simplify your life with Tape.
@@ -50,7 +43,7 @@ export default function App() {
         <Text className="text-black text-lg font-bold">Get Started</Text>
       </TouchableOpacity> 
 
-      <Text className="absolute top-[63px] text-black text-2xl font-bold" style={{ fontWeight: 'bold' }}>
+      <Text className="absolute top-[63px] text-black text-2xl font-bold" style={{ fontWeight: '900' }}>
         tape.
       </Text>
 
