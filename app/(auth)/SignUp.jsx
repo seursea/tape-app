@@ -35,7 +35,7 @@ const SignUp = () => {
         <View className="flex flex-col px-12 pt-10 w-full text-xl min-h-[85vh] bg-secondary-default">
           <FormField 
             title="Username"
-            value={form.email}
+            value={form.username}
             handleChangeText={(e) => setForm({ 
               ...form,
               username: e
