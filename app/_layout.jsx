@@ -17,7 +17,9 @@ const RootLayout = () => {
         "Poppins-Regular": require("../assets/fonts/Poppins-Regular.ttf"),
         "Poppins-SemiBold": require("../assets/fonts/Poppins-SemiBold.ttf"),
         "Poppins-Thin": require("../assets/fonts/Poppins-Thin.ttf"),
-        "Clara-Regular": require("../assets/fonts/Miss Clara [Regular] Font by 7NTypes.otf"),
+        "Clara-Regular": require("../assets/fonts/Clara-Regular.ttf"),
+        "Kitchen Girl": require("../assets/fonts/Kitchen Girl.ttf"),
+        "Love Twist Sans": require("../assets/fonts/Love Twist Sans.ttf"),
       });
 
       useEffect(() => {
