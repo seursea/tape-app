@@ -8,7 +8,7 @@ import {
   StatusBar,
   StyleSheet,
 } from 'react-native';
-import icons from '../constants/icons.js';
+import icons from '../../constants/icons.js';
 
 const CreateBacklog = () => {
   return (
