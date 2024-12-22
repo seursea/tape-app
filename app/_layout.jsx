@@ -17,7 +17,7 @@ const RootLayout = () => {
         "Poppins-Regular": require("../assets/fonts/Poppins-Regular.ttf"),
         "Poppins-SemiBold": require("../assets/fonts/Poppins-SemiBold.ttf"),
         "Poppins-Thin": require("../assets/fonts/Poppins-Thin.ttf"),
-        "Clara-Regular": require("../assets/fonts/Clara-Regular.ttf"),
+        "Clara-Regular": require("../assets/fonts/Miss Clara [Regular] Font by 7NTypes.otf"),
       });
 
       useEffect(() => {
