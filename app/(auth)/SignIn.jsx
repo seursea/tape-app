@@ -1,9 +1,9 @@
 import { View, Text, ScrollView } from 'react-native'
 import React, { useState } from 'react'
 import { SafeAreaView } from 'react-native-safe-area-context'
-
-// import { icons } from '../../constants/icons'
+import CustomButton from '../../components/CustomButton'
 import FormField from '../../components/FormField'
+import { Link } from 'expo-router'
 
 const SignIn = () => {
   const [form, setForm] = useState({
@@ -11,14 +11,15 @@ const SignIn = () => {
     password: '',
   })
 
+  const [ isSubmitting, setIsSubmitting] = useState(false)
+
+  const submit = () => {
+
+  }
+
   return (
     <SafeAreaView className="bg-secondary-default h-full">
       <ScrollView>
-        {/* <View className='w-full justify center h-full px-4 my-6'>
-          <Text className='text-3xl text-primary font-pbold mt-10'>
-            Sign in to your Account
-          </Text>
-        </View> */}
         <View className='flex flex-col pt-2 pb-8 mx-auto w-full bg-primary'>
           <View className='self-center mt-5'>
             <Text className='text-1xl font-pbold text-secondary-default'>tape.</Text>
@@ -30,7 +31,7 @@ const SignIn = () => {
           </View>
           
         </View>
-        <View className="flex flex-col px-12 pt-10 w-full text-xl">
+        <View className="flex flex-col px-12 pt-10 w-full text-xl min-h-[85vh] bg-secondary-default">
           <FormField 
             title="Email"
             value={form.email}
@@ -50,8 +51,23 @@ const SignIn = () => {
               password: e
             })}
             otherStyles='mt-7'
-            keyboardType='email-address'
           />
+          <CustomButton 
+            title='Sign In'
+            handlePress={submit}
+            containerStyles='mt-7 bg-[#cacaca]'
+            isLoading={isSubmitting}
+          />
+
+          <View className='justify-center pt-5 flex-row gap-2'>
+            <Text className='text-lg text-gray-dark-100 font-pregular'>
+              Don't have an account?
+            </Text>
+            <Link href='/SignUp'
+            className='text-lg font-psemibold text-blaxk-light-71'>
+              Sign Up
+            </Link>
+          </View>
         </View>
       </ScrollView>
     </SafeAreaView>
