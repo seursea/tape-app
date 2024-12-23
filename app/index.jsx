@@ -38,7 +38,7 @@ export default function App() {
 
       <TouchableOpacity 
         onPress={handleGetStarted}  
-        className="w-[356px] h-[53px] bg-[#73dabf] border border-black justify-center items-center mt-[150px]"
+        className="w-[356px] h-[53px] bg-[#73dabf] justify-center items-center mt-[150px]"
       >
         <Text className="text-black text-lg font-bold">Get Started</Text>
       </TouchableOpacity> 
