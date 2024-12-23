@@ -4,6 +4,9 @@ import todo from "../assets/icons/todo.png";
 import undrawToDoList from "../assets/images/undraw_to-do-list_dzdz.png";
 import back from "../assets/images/back.png";
 import task from "../assets/images/task.png";
+import sun from "../assets/icons/sun.png";
+import moon from "../assets/icons/moon.png";
+import settings from "../assets/icons/settings.png";
 
 export default {
   add,
@@ -11,5 +14,8 @@ export default {
   todo,
   undrawToDoList,
   back,
-  task
+  task,
+  sun,
+  moon,
+  settings
 };
