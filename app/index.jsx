@@ -41,8 +41,42 @@ export default function App() {
 
 
       </View>
+
+
+      <Text className="text-center text-black text-3xl font-bold mt-[100px]">
+        <Text style={{ fontWeight: '900' }}>Stay Organized,</Text>
+        {"\n"}
+        <Text style={{ fontWeight: '900' }}>Stay Productive</Text>
+      </Text>
+
+      <Image
+        source={icons.undrawToDoList}
+        style={{ width: 361.57, height: 200, marginTop: 30 }}
+        resizeMode="contain"
+      />
+
+      <Text className="text-center text-black text-xl mt-[50px] px-10">
+        Track tasks, meet goals, and simplify your life with Tape.
+      </Text>
+
+      <TouchableOpacity 
+        onPress={handleGetStarted}  
+        className="w-[356px] h-[53px] bg-[#73dabf] justify-center items-center mt-[150px]"
+      >
+        <Text className="text-black text-lg font-bold">Get Started</Text>
+      </TouchableOpacity> 
+
+      <Text className="absolute top-[63px] text-black text-2xl font-bold" style={{ fontWeight: '900' }}>
+        tape.
+      </Text>
+
+      <StatusBar style="auto" />
+    </View>
+  );
+
       <StatusBar backgroundColor='#ecf1e4' style='light'/>
     </ScrollView>
     </SafeAreaView>
   )
+
 }
