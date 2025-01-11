@@ -24,7 +24,6 @@ const Create = () => {
 
   return (
     <SafeAreaView className="flex-1 bg-secondary-default">
-      <StatusBar backgroundColor="#73dabf" style="dark" />
 
       <View className="flex-row justify-between items-center w-full px-4 py-4">
         <TouchableOpacity 

@@ -5,8 +5,7 @@ import {
   SafeAreaView,
   TouchableOpacity, 
   ScrollView,
-  Image,
-  StatusBar
+  Image
 } from 'react-native';
 import { useRouter } from 'expo-router';
 import icons from '../../constants/icons.js';
@@ -16,7 +15,6 @@ const Profile = () => {
   
   return (
     <SafeAreaView className="flex-1 bg-secondary-default">
-      <StatusBar backgroundColor="#73dabf" style="dark" />
       
       <View className="flex-row justify-between items-center w-full px-4 py-4">
         <Text className="text-xl font-pbold text-black-light">Profile</Text>
