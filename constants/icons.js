@@ -12,7 +12,6 @@ import settings from "../assets/icons/settings.png";
 import eye from "../assets/icons/eye.png";
 import eyeclosed from "../assets/icons/eyeclosed.png";
 
-
 export default {
   add,
   prof,
@@ -23,10 +22,7 @@ export default {
 
   sun,
   moon,
-  settings
-};
-
+  settings,
   eye,
   eyeclosed,
 };
-
