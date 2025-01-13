@@ -14,8 +14,7 @@ const FormField = ({ title, value, placeholder, handleChangeText, otherStyles, .
       
       <View className={`w-full h-16 px-4 bg-gray-dark-200 border-2 rounded-lg ${isFocused ? 'border-primary' : 'border-gray-dark'} items-center flex-row`}>
         <TextInput 
-          className='flex-1 text-black-light text-base font-psemibold'
-          value={value}
+          className='flex-1 text-black-light text-base font-pregular'
           placeholder={placeholder}
           placeholderTextColor='#73DAC0'
           onChangeText={handleChangeText}
