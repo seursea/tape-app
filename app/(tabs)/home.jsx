@@ -8,6 +8,7 @@ import RoundButton from '../../components/RoundButton'
 const home = () => {
   const [greet, setGreet] = useState("Evening");
   const [modalVisible, setModalVisible] = useState(false);  
+  const [notes, setNotes] = useState([]);    
 
   const findGreet = () => {
     const hrs = new Date().getHours()
@@ -16,12 +17,23 @@ const home = () => {
     setGreet("Evening");
   }
 
+  const findNotes = async () => {
+    const result = await AsyncStorage.getItem('notes');
+    console.log(result);
+    if(result !== null) setNotes(JSON.parse(result));
+  }
   useEffect(() => {
+    findNotes();
     findGreet();
   }, [])
 
-const handleOnSubmit = (title, description) => {
+const handleOnSubmit = async (title, description) => {
   const note = {id: Date.now(), title, description, time: Date.now()} 
+  console.log(note);
+  const newNotes = [...notes, note];
+  setNotes(newNotes);
+  await AsyncStorage.setItem('notes', JSON.stringify(newNotes))
+  
 } 
 
   return (
