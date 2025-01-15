@@ -17,9 +17,6 @@ const RootLayout = () => {
         "Poppins-Regular": require("../assets/fonts/Poppins-Regular.ttf"),
         "Poppins-SemiBold": require("../assets/fonts/Poppins-SemiBold.ttf"),
         "Poppins-Thin": require("../assets/fonts/Poppins-Thin.ttf"),
-        "Clara-Regular": require("../assets/fonts/Clara-Regular.ttf"),
-        "Kitchen Girl": require("../assets/fonts/Kitchen Girl.ttf"),
-        "Love Twist Sans": require("../assets/fonts/Love Twist Sans.ttf"),
       });
 
       useEffect(() => {
@@ -32,10 +29,11 @@ const RootLayout = () => {
     <Stack>
         <Stack.Screen name="index" options={{ headerShown: false}} />
         <Stack.Screen name="(auth)" options={{ headerShown: false}} />
-        <Stack.Screen name="(tabs)" options={{ headerShown: false}} /> 
+        <Stack.Screen name="(tabs)" options={{ headerShown: false}} />
     </Stack>
   )
 }
 
 export default RootLayout
+
 
