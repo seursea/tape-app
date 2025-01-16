@@ -69,7 +69,7 @@ const Create = ({ visible, onClose, onSubmit }) => {
                 />
                 <TextInput 
                   className="text-lg h-32 border-secondary-default mb-6 font-pregular"
-                  placeholder='Notes'
+                  placeholder='Task Description'
                   multiline={true}
                   textAlignVertical='top'
                   value={description}
