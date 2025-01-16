@@ -12,7 +12,7 @@ import {
 import { useNavigation } from '@react-navigation/native';
 import { Picker } from '@react-native-picker/picker';
 import icons from '../../constants/icons.js';
-//import { useFonts } from 'expo-font';
+import { useFonts } from 'expo-font';
 
 const Profile = () => {
   const [activeTab, setActiveTab] = useState('My Profile');

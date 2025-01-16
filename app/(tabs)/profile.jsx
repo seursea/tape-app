@@ -42,7 +42,6 @@ const Profile = () => {
             <Text className="text-base font-pmedium text-black-light">Settings</Text>
           </TouchableOpacity>
 
-          {/* Logout button */}
           <TouchableOpacity className="flex-row items-center space-x-4 p-4 bg-gray-light rounded-lg">
             <Text className="text-base font-pmedium text-black-light">Logout</Text>
           </TouchableOpacity>
