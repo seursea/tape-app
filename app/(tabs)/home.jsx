@@ -4,6 +4,7 @@ import { SafeAreaView } from 'react-native-safe-area-context'
 import SearchBar from '../../components/SearchBar'
 import Create from '../../components/create'
 import RoundButton from '../../components/RoundButton'  
+import Note from '../../components/Note'  
 
 const home = () => {
   const [greet, setGreet] = useState("Evening");
@@ -42,12 +43,16 @@ const handleOnSubmit = async (title, description) => {
       <ScrollView contentContainerStyle={{ flexGrow: 1 }}>
         <View className="mt-6 px-6 flex-1">
           <Text className="text-xl font-pbold mb-4">{`Good ${greet}, John!`}</Text>
-          <SearchBar 
-            
+          <SearchBar />
+          <FlatList
+            data={notes}
+            keyExtractor={(item) => item.id.toString()} 
+            renderItem={({ item }) => <Note item={item} />}
           />
+          {!notes.length ? 
           <View className="mt-6 justify-center items-center flex-1">
-            <Text className="font-pbold text-4xl opacity-20 text-center">No Notes</Text>
-          </View>
+            <Text className="font-pbold text-4xl opacity-20 text-center">No Tasks</Text>
+          </View> : null}
          </View>
          
       </ScrollView>

@@ -12,7 +12,7 @@ import {
 
 import { useNavigation } from '@react-navigation/native';
 import { Picker } from '@react-native-picker/picker';
-import icons from '../../constants/icons.js';
+import icons from '../constants/icons.js';
 import { useFonts } from 'expo-font';
 
 const Profile = () => {
@@ -54,8 +54,8 @@ const Profile = () => {
             <View style={styles.previewAvatar}>
               <Image 
                 style={styles.avatarImage}
-                source={require('../../assets/images/default-avatar.png')} 
-                defaultSource={require('../../assets/images/default-avatar.png')}
+                source={require('../assets/images/default-avatar.png')} 
+                defaultSource={require('../assets/images/default-avatar.png')}
               />
             </View>
             <View style={styles.previewInfo}>
