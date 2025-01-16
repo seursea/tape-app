@@ -9,6 +9,7 @@ import {
   Image,
   Platform
 } from 'react-native';
+
 import { useNavigation } from '@react-navigation/native';
 import { Picker } from '@react-native-picker/picker';
 import icons from '../../constants/icons.js';

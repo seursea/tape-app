@@ -7,6 +7,7 @@ import {
   ScrollView,
   Image
 } from 'react-native';
+
 import { useRouter } from 'expo-router';
 import icons from '../../constants/icons.js';
 
