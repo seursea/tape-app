@@ -55,7 +55,7 @@ const Profile = () => {
           />
           <CustomButton 
             title="Logout"
-            handlePress={() => router.push('/SignIn')}
+            handlePress={() => router.replace('/')}
           />
         </View>
       </ScrollView>
