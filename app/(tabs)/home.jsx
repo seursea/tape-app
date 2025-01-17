@@ -71,6 +71,7 @@ const handleOnSubmit = async (title, description) => {
             color='#F1EDE4'
             containerStyles="bg-[#73DAC0]"
           />
+          
         </View>
         <Create 
           visible={modalVisible}
