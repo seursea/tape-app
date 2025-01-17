@@ -11,20 +11,18 @@ import React, { useState, useEffect } from 'react';
 import { useRouter } from 'expo-router';    
 import RoundButton from './RoundButton';
 
-const Create = ({ visible, onClose, onSubmit }) => {
+const Create = ({ visible, onClose, onSubmit, note, isEdit }) => {
   const router = useRouter();
   // const [modalVisible, setModalVisible] = useState(true);// Set initial state to true
   const [title, setTitle] = useState('');
   const [description, setDescription] = useState('');
 
-  // useEffect(() => {
-  //   setIsVisible(true);
-  // }, []);
-
-  // const onClose = () => {
-  //   setModalVisible(false);
-  //   // router.back();
-  // }
+  useEffect(() => {
+    if (isEdit) {
+      setTitle(note.title);
+      setDescription(note.description);
+    }
+  }, [isEdit]);
            
   const handleOnChangeText = (text, valueFor) => {
     if (valueFor === 'title') setTitle(text);
@@ -33,9 +31,15 @@ const Create = ({ visible, onClose, onSubmit }) => {
 
   const handleSubmit = () => {
     if(!title.trim() && !description.trim()) return onClose(); 
-    onSubmit(title, description);
-    setTitle('');
-    setDescription('');
+    
+    if (isEdit) {
+      onSubmit(title, description, Date.now());
+    } else {
+      onSubmit(title, description);
+      setTitle('');
+      setDescription('');
+    }
+    
     onClose();
   }
 
@@ -44,8 +48,10 @@ const Create = ({ visible, onClose, onSubmit }) => {
   }
   
   const closeModal = () => {
-    setTitle('');
-    setDescription('');
+    if(!isEdit) {
+      setTitle('');
+      setDescription('');
+    };
     onClose();
   }   
 

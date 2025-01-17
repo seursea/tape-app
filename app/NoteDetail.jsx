@@ -8,6 +8,9 @@ import Create from '../components/create'
 const NoteDetail = () => {
     const { id } = useLocalSearchParams();
     const [note, setNote] = useState({ title: '', description: '' });
+    const [showModal, setShowModal] = useState(false);
+    const [isEdit, setIsEdit] = useState(false);  
+
     const formatDate = (ms) => {
       const date = new Date(ms);
       const day = date.getDate();
@@ -77,10 +80,39 @@ const NoteDetail = () => {
       fetchNote();
     }, [id]);
 
+  const handleUpdate = async (title, description, time) => {
+    try {
+      const result = await AsyncStorage.getItem('notes');
+      let notes = [];
+      if (result !== null) {
+        notes = JSON.parse(result);
+      }
+      const newNotes = notes.map(n => {
+        if (n.id === parseInt(id)) {
+          return { ...n, title, description, time: Date.now(), isUpdated: true };
+        }
+        return n;
+      });
+      setNote(newNotes.find(n => n.id === parseInt(id)));
+      await AsyncStorage.setItem('notes', JSON.stringify(newNotes));
+      console.log('Note updated:', id); // Add logging
+      router.push('/home'); // Navigate back to home screen to reflect changes
+    } catch (error) {
+      console.error('Failed to update note:', error);
+    }
+  };
+  
+  const handleOnClose = () => setShowModal(false);
+
+  const openEditModal = () => {
+    setIsEdit(true);
+    setShowModal(true);
+  }
+
   return (
     <>
     <ScrollView className="bg-secondary-default p-6 mt-4 flex-1" contentContainerStyle={{ paddingBottom: 40 }}>
-      <View className="px-8 mt-12">
+      <View className="px-4 mt-12">
         <Text className="text-base text-gray-500 text-right py-2">{`Created At ${formatDate(note.time)}`}</Text>
         <Text className="text-3xl font-pbold text-primary mb-2">{note.title}</Text>
         <Text className="text-lg text-black-light opacity-70">{note.description}</Text>
@@ -92,7 +124,7 @@ const NoteDetail = () => {
           antIconName='edit'
           color='#F1EDE4'
           containerStyles="bg-[#73DAC0] opacity-70 mb-4" 
-          onPress={ () => console.log('Edit pressed')}
+          onPress={openEditModal}
         />
         <RoundButton 
           antIconName='delete'
@@ -101,7 +133,13 @@ const NoteDetail = () => {
           onPress={displayDeleteAlert}
         />
       </View>
-      <Create />
+      <Create
+        isEdit={isEdit}
+        note={note}
+        onClose={handleOnClose} 
+        onSubmit={handleUpdate}
+        visible={showModal}
+      />
       </>
   );
 }
