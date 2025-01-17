@@ -113,7 +113,7 @@ const NoteDetail = () => {
     <>
     <ScrollView className="bg-secondary-default p-6 mt-4 flex-1" contentContainerStyle={{ paddingBottom: 40 }}>
       <View className="px-4 mt-12">
-        <Text className="text-base text-gray-500 text-right py-2">{`Created At ${formatDate(note.time)}`}</Text>
+        <Text className="text-base text-gray-500 text-right py-2">{`${formatDate(note.time)}`}</Text>
         <Text className="text-3xl font-pbold text-primary mb-2">{note.title}</Text>
         <Text className="text-lg text-black-light opacity-70">{note.description}</Text>
       </View>
