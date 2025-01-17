@@ -31,6 +31,7 @@ const RootLayout = () => {
         <Stack.Screen name="(auth)" options={{ headerShown: false}} />
         <Stack.Screen name="(tabs)" options={{ headerShown: false}} />
         <Stack.Screen name="settings" options={{ headerShown: false}} />
+        <Stack.Screen name="NoteDetail" options={{ headerTitle: "", headerTransparent: true, title: 'Note Detail' }} />
     </Stack>
   )
 }
