@@ -1,8 +1,9 @@
 import React, { useState, useEffect } from 'react';
 import { View, Text, ScrollView, Alert } from 'react-native';
-import { useLocalSearchParams } from 'expo-router';
+import { useLocalSearchParams, useRouter } from 'expo-router';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import RoundButton from '../components/RoundButton'  
+import Create from '../components/create'
 
 const NoteDetail = () => {
     const { id } = useLocalSearchParams();
@@ -18,10 +19,39 @@ const NoteDetail = () => {
 
       return `${month}/${day}/${year} - ${hrs}:${mins}:${secs}`;
     }
-
+    
+    const router = useRouter();
+    
     const displayDeleteAlert = () => {
-      
+      Alert.alert("Are you sure?", "This action will delete your note permanently.", [
+        {
+          text: "Cancel",
+          onPress: () => console.log('Cancel pressed'),
+        },
+        {
+          text: "Delete",
+          onPress: deleteNote,
+        }
+      ], {
+        cancelable: true
+      })
     }
+    
+    const deleteNote = async () => {
+      try {
+        const result = await AsyncStorage.getItem('notes');
+        let notes = [];
+        if (result !== null) {
+          notes = JSON.parse(result);
+        }
+        const newNotes = notes.filter(note => note.id !== parseInt(id));
+        await AsyncStorage.setItem('notes', JSON.stringify(newNotes));
+        console.log('Note deleted:', id); // Add logging
+        router.push('/home');
+      } catch (error) {
+        console.error('Failed to delete note:', error);
+      }
+    };  
   
     useEffect(() => {
       const fetchNote = async () => {
@@ -62,15 +92,16 @@ const NoteDetail = () => {
           antIconName='edit'
           color='#F1EDE4'
           containerStyles="bg-[#73DAC0] opacity-70 mb-4" 
-          onPress={displayDeleteAlert}
+          onPress={ () => console.log('Edit pressed')}
         />
         <RoundButton 
           antIconName='delete'
           color='#F1EDE4'
           containerStyles="bg-[#73DAC0] opacity-70"
-          onPress={() => console.log('Delete pressed')}
+          onPress={displayDeleteAlert}
         />
       </View>
+      <Create />
       </>
   );
 }
