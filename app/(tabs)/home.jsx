@@ -25,9 +25,15 @@ const home = () => {
   }
 
   const findNotes = async () => {
-    const result = await AsyncStorage.getItem('notes');
-    console.log('Fetched notes:', result); // Add logging
-    if (result !== null) setNotes(JSON.parse(result));
+    try {
+      const result = await AsyncStorage.getItem('notes');
+      console.log('Fetched notes:', result); // Add logging
+      if (result !== null) {
+        setNotes(JSON.parse(result));
+      }
+    } catch (error) {
+      console.error('Failed to fetch notes:', error);
+    }
   }
 
   useEffect(() => {
@@ -40,8 +46,12 @@ const handleOnSubmit = async (title, description) => {
     console.log('New note:', note); // Add logging
     const newNotes = [...notes, note];
     setNotes(newNotes);
-    await AsyncStorage.setItem('notes', JSON.stringify(newNotes));
-    console.log('Saved notes:', JSON.stringify(newNotes)); // Add logging
+    try {
+      await AsyncStorage.setItem('notes', JSON.stringify(newNotes));
+      console.log('Saved notes:', JSON.stringify(newNotes)); // Add logging
+    } catch (error) {
+      console.error('Failed to save notes:', error);
+    }
   
 } 
 
