@@ -13,4 +13,4 @@ const RoundButton = ( {antIconName, size, onPress, color, containerStyles}) => {
   )
 }
 
-export default RoundButton
+export default RoundButton;

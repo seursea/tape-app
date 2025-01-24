@@ -15,7 +15,7 @@ import { Picker } from '@react-native-picker/picker';
 import icons from '../../constants/icons.js';
 import { useFonts } from 'expo-font';
 
-const Profile = () => {
+const Settings = () => {
   const [activeTab, setActiveTab] = useState('My Profile');
   const [selectedLanguage, setSelectedLanguage] = useState('English');
   const navigation = useNavigation();
@@ -648,4 +648,4 @@ const styles = StyleSheet.create({
   },
 });
 
-export default Profile;
+export default Settings;
